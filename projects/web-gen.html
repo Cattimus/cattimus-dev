@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cattimus - Web-Gen</title>
+	</head>
+
+    <body>
+        <!--header-->
+		<div class="main_header">
+			<h1 style="display:inline-block">Cat</h1>
+			<img class="icon" src="/assets/media/cattimus.png" height="64" width="64">
+			<h1 style="display:inline-block">Dev</h1>
+			<div class="navbar">
+				<a class="navbar_element" href="/index.html">Home</a>
+				<a class="navbar_element" href="/projects.html">Projects</a>
+				<a class="navbar_element" href="/guides.html">Guides</a>
+				<a class="navbar_element" href="/docs.html">Docs</a>
+			</div>
+		</div>
+
+        <!--content-->
+		<div class="content">
+			<div style="text-align:center;">
+				<h1>Web Gen:</h1>
+				<a href="https://github.com/cattimus/web-gen" class="custom">Project page on github</a>
+			</div>
+			
+			<div class="article_chunk">
+				<br>
+				<h2 style="text-align:center;">What does it do?</h2>
+				<p>
+					This project was designed to make the process of developing this website easier. 
+					The idea was to create a program that would allow me to create "templates" that could be inserted into webpages. 
+					This would allow me to create a template once and then easily build a website by repeating those templates. 
+					It was supposed to be similar to how you reuse a function in code, but the reality ended up being a bit more of a copy-paste machine. 
+				</p>
+
+				<p>
+					Ultimately I found the design that I had in mind impractical for the type of simple website I was designing. 
+					I could probably add in a lot of templates for various parts of the website, but at the end of the day, copy-pasting by hand is faster for some things. 
+					For example: the projects page. 
+					I could probably benefit from a template if I wanted to add a thousand projects, but I would only be saving about 15 seconds or so.
+				</p>
+			</div>
+
+			<div class="article_chunk">
+				<br>
+				<h2 style="text-align:center;">How does it do it?</h2>
+				<p>
+					The gist of how this program works is by searching for "template directives" which are defined by a specific sequence of characters.
+					I planned on there being multiple types of template directives, but I only ever ended up making the copy directive.
+					The copy directive will accept exactly one argument: the name of a file. 
+					When a copy directive is reached, it will search for this file in the templates and copy-paste the contents with proper indenting.
+					Implementing the text search actually was one of the easiest parts of this project.
+					The more difficult parts of the project were figuring out how copying files should work and how to deal with command line input.
+				</p>
+			</div>
+
+			<figure style="text-align: center;">
+				<img src="/assets/media/web-gen/template_directive.png" style="max-width: 100%;">
+				<figcaption><em>An example of a copy directive</em></figcaption>
+			</figure>
+
+			<div class="article_chunk">
+				<br>
+				<h3 style="text-align:center;">Copying Files:</h3>
+				<p>
+					Copying files is a deceptively simple problem.
+					One would think "oh, you just copy the folder, I do that all the time".
+					Turns out, it's harder than that!
+					When you have a directory structure, you're not actually sure what's in the directory until you search it.
+					A directory might contain files, or another directory. 
+					Easy right? Well, the directory inside of our current directory might contain another directory.
+					Uh oh, that means we have to implement a recursive search function just to figure out what our directories look like.
+					Rather than construct some kind of tree and walking down it to copy files,
+					I decided to copy directories during the recursive search and make a list of the files.
+					This allows us to have a proper directory structure in the build directory.
+				</p>
+			</div>
+			
+			<figure style="text-align:center">
+				<img src="/assets/media/web-gen/directory_search.png" style="max-width:100%;">
+				<figcaption><em>This is what the recursive search function actually looks like</em></figcaption>
+			</figure>
+
+			<div class="article_chunk">
+			<br>
+			<h3 style="text-align:center;">Parsing Files:</h3>
+			<p>
+				Parsing files works as you'd expect.
+				The file is searched line by line until a copy directive is reached.
+				When a copy directive is reached, the templates directory is searched for the file specified.
+				If it's found, it gets inserted directly into the text stream.
+				If it's not found, an error gets printed to the console and the program continues on as if there was no copy directive.
+				The files then get written to the appropriate location in the build directory.
+			</p>
+			</div>
+			
+		</div>
+    </body>
+
+</html>

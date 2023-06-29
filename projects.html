@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Cattimus - Projects</title>
+	</head>
+
+	
+	<body>
+		<!--header-->
+		<div class="main_header">
+			<h1 style="display:inline-block">Cat</h1>
+			<img class="icon" src="/assets/media/cattimus.png" height="64" width="64">
+			<h1 style="display:inline-block">Dev</h1>
+			<div class="navbar">
+				<a class="navbar_element" href="/index.html">Home</a>
+				<a class="navbar_element" href="/projects.html">Projects</a>
+				<a class="navbar_element" href="/guides.html">Guides</a>
+				<a class="navbar_element" href="/docs.html">Docs</a>
+			</div>
+		</div>
+
+		<!--content-->
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/jsafe.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/jsafe.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">jsafe:</h1></a>
+			</div>
+			
+			<br>
+			<span>
+				<p>
+					This project was created to test out rust while I was considering making a fully memory-safe game engine.
+					One of the projects I keep returning to is JSON parsing.
+					I've never really come up with a good solution that will work for low-level code, but I think I've come close here.
+					jsafe is the culmination of my years of experience as a programmer. It is the project I am currently the most proud of.
+				</p>
+				
+				<p>
+					jsafe is written fully in rust with C bindings.
+					It can be compiled as a rust library, a dynamically linked C library, or a statically linked C library.
+					The C bindings were written to allow general memory-safe ease of use from any programming languge.
+					They may also be used from any langauge that has a FFI such as C#, python, and lua.
+				</p>
+
+				<p>
+					Skills Required: <br>
+					<ul>
+						<li>Low-level programming</li>
+						<li>Ability to read and understand technical specifications</li>
+						<li>Strong understanding of memory ownership and other concepts</li>
+						<li>Understanding of library design and polyglot programming</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/crust_engine.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/crust-engine.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">Crust Engine:</h1></a>
+			</div>
+
+			<br>
+			<span>
+				<p>
+					This project was spawned in my brain when I was doing research into how to run C code from C#.
+					C# is one of my favorite langauges, but I always felt like it wasn't very useful for certain categories of projects because you are fully dependent upon random 3rd party libraries.
+					Much to my surprise, C# has an incredibly robust FFI library that makes it relatively easy to call functions from C.
+				</p>
+
+				<p>
+					One of the major hurdles when developing a game engine is integrating a scripting langauge to handle things like AI logic and short snippets of dynamic code.
+					In my previous experiments, I used lua for a scripting language.
+					This was alright, but it left a lot to be desired, since every in-engine object had to have lua bindings written for it.
+					The better solution I came up with is to make the engine in a lower level language, and call it from a higher level one.
+				</p>
+
+				<p>
+					This works really well, because it is language-agnostic. If your client language has FFI, it will work.
+					This allows the user to control how much dynamic code they want, while making the engine itself simpler.
+				</p>
+
+				<p>
+					Skills Required: <br>
+					<ul>
+						<li>Low-level programming</li>
+						<li>Strong understanding of memory management</li>
+						<li>Understanding of library design and polyglot programming</li>
+						<li>API design</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/web-gen.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/web-gen.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">Web Gen:</h1></a>
+			</div>
+			
+			<br>
+			<span>
+				<p>
+					This project was created specifically for this website!
+					I knew that I wanted to create a static site, but quickly ran into a roadblock in how to implement a header at the top of the page.
+					I decided the solution was to create an <em>advanced copy-paste machine</em>, so that I didn't have to copy-paste the header on every change.
+					Of course, it would've also been possible to use javascript for this, but I wanted a site that did not need javascript enabled.
+				</p>
+
+				<p>
+					I cobbled this project together in a day so that I could start working on my website, but I made a  critical mistake that I didn't realize at the time.
+					I really should have used regular expressions for the text processing instead of processing the text by hand.
+					Rewrite/rework coming soon!
+				</p>
+
+				<p>
+					Skills required: <br>
+					<ul>
+						<li>Basic knowledge of programming</li>
+						<li>Text processing</li>
+						<li>(Ideally) knowledge of regex</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/png_decoder.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/png-decoder.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">PNG Decoder:</h1></a>
+			</div>
+
+			<br>
+			<span>
+				<p>
+					This project is written from scratch in C. It is able to decode PNG files and
+					transcode them into bitmaps. This involves working with huffman trees, reading RFCs,
+					Data compression (decompression), and more!
+				</p>
+
+				<p>
+					Skills Required: <br>
+					<ul>
+						<li>Low-level programming</li>
+						<li>Understanding of bitwise arithmetic</li>
+						<li>Ability to read and understand technical specifications</li>
+						<li>Heavy debugging (it is C)</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/JDPL.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/JDPL.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">JDPL:</h1></a>
+			</div>
+
+			<br>
+			<span>
+				<p>
+					JDPL is the successor to my original project x_to_json. I have been trying to
+					implement my own JSON API that is usable from any language for a long time.
+					JSON is everywhere, and the ability to interact with it is often a make or break for your project.
+					There are many existing implementations of JSON libraries that exist, and I <b>could</b> just use one of those.
+				</p>
+
+				<p>
+					But that's not very in the spirit of exploration is it?! Instead I decided to implement my own library, first in C++(x_to_json),
+					and later from scratch in C(JDPL). Ultimately, I think this project did not meet my expectations, since my implementation leaves
+					a little to be desired. It works, it will parse and print JSON just fine. The problem is accessing data is a little obtuse.
+				</p>
+				
+				<p>
+					This project has been made obsolete with the new jsafe!
+				</p>
+
+				<p>
+					Skills Required: <br>
+					<ul>
+						<li>Low-level programming</li>
+						<li>Memory management</li>
+						<li>Thorough testing for undefined behavior</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/stereo_balancer.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/stereo_balancer.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">Stereo Balancer:</h1></a>
+			</div>
+
+			<br>
+			<span>
+				<p>
+					This project was a personal project of mine due to annoyance at having audio playing
+					in only one side of my headphones. I thought to myself "this seems like a problem somebody
+					should've solved by now!". It was then that I realized I had the power to solve this problem!
+				</p>
+				
+				<p>
+					This project involved a heavy amount of reading into win32api to figure out exactly how I could manage
+					to fix audio while it is playing. The end result is still a bit of a hack, but it works!
+				</p>
+
+				<p>
+					Skills Required: <br>
+					<ul>
+						<li>Low-level programming</li>
+						<li>Understanding of bitwise arithmetic</li>
+						<li>Basic understanding of how digital audio signals work</li>
+						<li>Ability to read frustrating documentation (thank you microsoft)</li>
+						<li>Heavy debugging (it is C++ and multithreaded)</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+		<div class="project_content">
+			<div>
+				<img class="icon" src="/assets/media/loud_video_detector.png" height="96" width="96" style="text-align: left; position: absolute;">
+				<a href="/projects/loud-video-detector.html" style="color:inherit; text-decoration: none;"><h1 style="text-align: center;">Loud Video Detector:</h1></a>
+			</div>
+
+			<br>
+			<span>
+				<p>
+					This project was suggested to me by a friend. He was having a problem with his friends.
+					They were linking each other very loud videos in an attempt to bait people into clicking on them.
+					The problem was, this was very annoying, and also driving people away from the friend group.
+					So, rather than deal with things by talking to his friends and working things out, like all
+					good software developers, I suggested a technical solution!
+				</p>
+
+				<p>
+					This program will attempt to detect loud audio in a number of ways. If the limits are exceeded too
+					many times, the video/audio will be flagged as "loud". This will allow a heads-up before you actually
+					click on the video and blow out your eardrums.
+				</p>
+
+				<p>
+					Skills Required: <br>
+					<ul>
+						<li>Low-level programming</li>
+						<li>Understanding of bitwise arithmetic</li>
+						<li>Basic understanding of how digital audio signals work</li>
+						<li>Ability to use existing programs to shorten the work required</li>
+					</ul>
+				</p>
+			</span>
+		</div>
+
+	</body>
+</html>
