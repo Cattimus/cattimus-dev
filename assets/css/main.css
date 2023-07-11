@@ -155,11 +155,11 @@ a.navbar_element:hover
 }
 
 /*custom links*/
-a.custom:visited
+a.custom_link:visited
 {
 	color: #f9fd10;
 }
-a.custom:link
+a.custom_link:link
 {
 	color: #f9fd10;
 }
