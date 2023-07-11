@@ -1,9 +1,3 @@
-.icon
-{
-	display: inline-block;
-	border-radius:16px;
-}
-
 .round_icon
 {
 	border-radius: 192px;
@@ -18,6 +12,12 @@
 {
 	color: inherit;
 	text-decoration: none;
+}
+
+.project_title
+{
+	display:flex;
+	justify-content: space-around;
 }
 
 .centered
