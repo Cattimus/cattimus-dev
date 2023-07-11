@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="/assets/css/main.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Setting up email</title>
+	</head>
+
+    <body>
+        <!--header-->
+		<div class="main_header">
+			<h1 style="display:inline-block">Cat</h1>
+			<img class="icon" src="/assets/media/cattimus.png" height="64" width="64">
+			<h1 style="display:inline-block">Dev</h1>
+			<div class="navbar">
+				<a class="navbar_element" href="/index.html">Home</a>
+				<a class="navbar_element" href="/projects.html">Projects</a>
+				<a class="navbar_element" href="/guides.html">Guides</a>
+				<a class="navbar_element" href="/docs.html">Docs</a>
+				<a class="navbar_element" href="/contact.html">Contact</a>
+			</div>
+		</div>
+
+        <!--content-->
+		<div class="content">
+			<div class="centered">
+				<h1>Setting up your own email</h1>
+				<p>Last updated: 7-10-2023</p>
+			</div>
+
+
+			<div class="article_chunk">
+				<br>
+				<h2 class="centered">Why use your own domain</h2>
+
+				<p>
+					The obvious question you might be asking is: what does it mean to use my own domain with email, and why should I do it?<br>
+					Hosting your email with your own domain means that you use a domain you've purchased for your emails. This has several advantages:
+
+					<ul>
+						<li>You can't lose access to your email accounts as long as you own the domain</li>
+						<li>You can easily switch between email providers while keeping your accounts</li>
+						<li>You have more control over your email and security</li>
+						<li>You have the ability to switch email providers if you decide you don't like your current one</li>
+					</ul>
+
+					Using your own domain for emails also has several disadvantages:
+
+					<ul>
+						<li>You are ultimately responsible for the security of your email and domain</li>
+						<li>Any fraudulent emails sent through your domain are likely to get you in trouble</li>
+						<li>You must learn quite a bit about how email works</li>
+						<li>Your email accounts will appear much more unique because they are linked to your domain (this may make you more of a target for attackers)</li>
+						<li>Once you set up email on your domain, this is a lifelong commitment.
+							If your domain ever expires, somebody can re-register it and control your email accounts.</li>
+					</ul>
+
+					This approach isn't for everybody, 
+					but if you are a technical person who is willing to invest time and effort into setting up email on your domain, 
+					you will be able to take control over an often neglected but essential piece of digital life: email.
+				</p>
+			</div>
+
+			<div class="article_chunk">
+
+				<br>
+				<h2 class="centered">Registering a domain</h2>
+				<p>
+					Ultimately there isn't much to say about registering a domain.
+					This is a fairly standardized process, and many people register their own domains.
+					However, there are a few things that should be noted by prospective domain owners.
+				</p>
+
+				<br>
+				<h3 class="centered">Predatory registrars</h3>
+				<p>
+					Not all registrars are created equal. In fact, some of them are very bad.
+					Most registrars allow you to search for the domain you want to buy to see if it's available.
+					Some registrars will use this as an opportunity to buy the domain themselves, 
+					this allows them to charge you whatever they want for the domain.
+					At this point your only option is to go with the registrar that owns the domain, 
+					and you are better off looking for a different domain elsewhere.
+				</p>
+
+				<p>
+					These kinds of situations can be avoided by doing research <em>before</em> you start attempting to register a domain.
+				</p>
+
+				<br>
+				<h3 class="centered">DNS</h3>
+				<p>
+					Generally accepted advice is to not put all of your eggs in one basket.
+					DNS stands for domain name system, it is the system that allows a domain name to be resolved to an IP address.
+					Your registrar most likely also runs their own DNS servers, and will automatically configure your new domain to use their servers.
+					However, you have the option of many DNS providers, and it is better to use a different company for your DNS.
+				</p>
+
+				<p>
+					The easiest way to explain why is an example.
+					Let's say that your registrar is undergoing sceduled maintenence at the same time you're changing email providers.
+					You go ahead and cancel service on your current provider, and sign up to a new provider, unaware of the issues at your registrar.
+					The scheduled maintenence gets extended as the registrar runs into some unexpected issues, they estimate the service will be down for 3 days.
+					Now you can't update your DNS entries, and you have MX records that are pointing to broken links.
+					Your only option is to wait for your registrar to finish with their maintenence.
+				</p>
+
+				<p>
+					By separating your registrar and DNS service, you don't have a single point of failure.
+					In the event something goes wrong with one service, you will still have access to the other.
+					This can help prevent downtime and allow you to recover from errors or bugs.
+				</p>
+			</div>
+
+			<div class="article_chunk">
+				<br>
+				<h2 class="centered">Choosing an email provider</h2>
+
+				<p>
+					Choosing an email provider is much the same as choosing a registrar.
+					You can always transfer, but you will likely be stuck with a provider for a while once you've registered.
+					Make sure to do research ahead of time and pick a provider that will align with your needs.
+				</p>
+
+				<p>
+					Ultimately I would suggest using a <em>paid</em> email service.
+					You will generally be treated much better as a paying customer.
+					Customer support generally comes on the condition that you are paying.
+				</p>
+			</div>
+
+			<div class="article_chunk">
+				<br>
+				<h2 class="centered">Setting up email with your new provider</h2>
+
+				<p>
+					Now that you've chosen your provider, you need to set up some DNS entries.
+					The only <em>required</em> entry is called an "MX" entry.
+					MX entries are used for mail, and do not effect any websites or web services you might have running on this domain.
+					Your email provider will give you instructions on how to point your domain to the proper servers.
+					You will typically have two servers to point MX records at, a primary and a secondary in the case of a failure.
+				</p>
+
+				<p>
+					After you've completed this step, 
+					provided you've configured everything correctly, 
+					you should be able to recieve emails! Hooray!
+
+					You can use your email in this configuration if you want, but I would not recommend it.
+				</p>
+			</div>
+
+			<div class="article_chunk">
+				<br>
+				<h2 class="centered">Security</h2>
+
+				<p>
+					That's right. Security time.
+					This is best covered in detail in a completely separate guide,
+					but I will summarize why you need to take security into account.
+				</p>
+
+				<p>
+					Email as a protocol is inherently insecure.
+					An attacker may pretend that their email is coming from your domain, 
+					and fool users into thinking that you're sending them emails.
+
+					Although most providers won't allow random people to send emails from your account,
+					this doesn't mean they can't send spam from another mail server and say that it's coming from your domain.
+
+					There are a number of defenses against this that have been created, and that's what we'll go over in 
+					<a class="custom" href="/guides/preventing-email-spoofing.html">the article on securing your email.</a>
+				</p>
+			</div>
+
+		</div>
+    </body>
+
+</html>
