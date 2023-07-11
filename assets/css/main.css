@@ -4,15 +4,20 @@
 	border-radius:16px;
 }
 
+.round_icon
+{
+	border-radius: 192px;
+}
+
+.square_icon
+{
+	border-radius: 16px;
+}
+
 .title_link
 {
 	color: inherit;
 	text-decoration: none;
-}
-
-.full_round
-{
-	border-radius: 192px;
 }
 
 .centered
